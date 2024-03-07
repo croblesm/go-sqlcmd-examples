@@ -33,47 +33,59 @@ Usage:
 
 Let's see a few examples:
 
-- Create a new container using the latest version of SQL Server, and default options:
-
-    ```bash
-    sqlcmd create mssql
-    ```
-
-- Retrieve all the available tags for SQL Server, and install the previous version:
+- Start by retrieving all the available tags (container images) for SQL Server:
 
     ```bash
     sqlcmd create mssql get-tags
+    ```
+- Create a new container using the latest version (2022) of SQL Server, and default options:
+
+    ```bash
+    sqlcmd create mssql --accept-eula 
     ```
 
 - Create a new container using the 2019 version of SQL Server, and default options:
 
     ```bash
-    sqlcmd create mssql --tag 2019-latest
+    sqlcmd create mssql --tag 2019-latest --accept-eula
     ```
 
 - Create SQL Server, download and attach AdventureWorks sample database:
 
     ```bash
-    sqlcmd create mssql --using https://aka.ms/AdventureWorksLT.bak    
+    sqlcmd create mssql --using https://aka.ms/AdventureWorksLT.bak --accept-eula
     ```
 
 - Create SQL Server, download and attach AdventureWorks sample database with different database name
 
     ```bash
-    sqlcmd create mssql --using https://aka.ms/AdventureWorksLT.bak,adventureworks
+    sqlcmd create mssql --using https://aka.ms/AdventureWorksLT.bak,adventureworks --accept-eula
     ```
 
 - Create SQL Server with an empty user database
 
     ```bash
-    sqlcmd create mssql --user-database db1
+    sqlcmd create mssql --user-database db1 --accept-eula
     ```
 
 - Install/Create SQL Server with full logging
 
     ```bash
-    sqlcmd create mssql --verbosity 4
+    sqlcmd create mssql --verbosity 4 --accept-eula
     ```
+
+## Connect to database
+
+First you need to get the connection string, you can use the `config connection-strings` command to get the connection string for the container:
+
+```bash
+sqlcmd config connection-strings
+```
+Grab the line corresponding to SQLCMD (last line), and then connect to your database as follows:
+
+```bash
+export 'SQLCMDPASSWORD=<PasswordGoesHere>'; sqlcmd -S 127.0.0.1,1433 -U <Username> -d <Database>
+```
 
 ## Flag
 
