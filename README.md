@@ -1,4 +1,4 @@
-# Get started with SQL Containers (Go-SQLCmd)
+# Getting started with SQL Containers (Go-SQLCmd)
 > This repository provides examples of how to use the `sqlcmd` command to manage SQL Server in a container.
 
 ## Prerequisites
