@@ -1,25 +1,26 @@
-# Getting started Go-SQLCMD
-> This repository provides examples of how to use the `sqlcmd` command to manage SQL Server in a container.
+# Getting started (Go) SQLCMD
+> This repository provides examples of how to use the `SQLCMD` command to manage SQL Server in a container.
 
 ## Prerequisites
 
-- [Create a workspaces environment (Optional)](https://github.com/features/codespaces)
-- [Install SqlCmd (Go)](https://learn.microsoft.com/en-us/sql/tools/sqlcmd/sqlcmd-utility?view=sql-server-ver16&tabs=go%2Clinux&pivots=cs1-bash#tabpanel_2_go)
+- [Create a GitHub Codespaces environment (Optional)](https://github.com/features/codespaces)
+- [Install Docker (Not required for GitHub Codespaces)](https://docs.docker.com/engine/install)
+- [Install (Go) SQLCMD](https://learn.microsoft.com/en-us/sql/tools/sqlcmd/sqlcmd-utility?view=sql-server-ver16&tabs=go%2Clinux&pivots=cs1-bash#tabpanel_2_go)
 
 Here you have the instructions to install the prerequisites in Ubuntu 20.04 with GitHub Codespaces:
 
-## Installation
+## Installing (Go) SQLCMD for Ubuntu
 
 ```bash
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc
 sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/20.04/prod.list)"
 sudo apt-get update
-sudo  apt-get install sqlcmd
+sudo apt-get install sqlcmd
 ```
 
 ## Usage
 
-The new version of SQLCMD, allows to create a new container, and restore a database to that container to create a new local copy of a database, for development or testing.
+The new version of `SQLCMD`, allows to create a new container, and restore a database to that container to create a new local copy of a database, for development or testing.
 
 The command is quite simple, you need to use the `create` command, and specify the `mssql` provider. The `mssql` provider has several options, such as the `--tag` option to specify the version of SQL Server, the `--using` option to specify the database to restore, and the `--user-database` option to specify the name of the user database.
 
@@ -123,4 +124,4 @@ Global Flags:
       --version            print version of sqlcmd
 ```
 
-For more information about the new version of `sqlcmd`, please visit the [Quickstart: Create a new local copy of a database in a container with sqlcmd](aka.ms/go-sqlcmd-qs).
+For more information about the new version of `SQLCMD`, please visit the [Quickstart: Create a new local copy of a database in a container with sqlcmd](aka.ms/go-sqlcmd-qs).
