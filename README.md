@@ -5,11 +5,11 @@
 
 - [Create a GitHub Codespaces environment (Optional)](https://github.com/features/codespaces)
 - [Install Docker (Not required for GitHub Codespaces)](https://docs.docker.com/engine/install)
-- [Install (Go) SQLCMD](https://learn.microsoft.com/en-us/sql/tools/sqlcmd/sqlcmd-utility?view=sql-server-ver16&tabs=go%2Clinux&pivots=cs1-bash#tabpanel_2_go)
+- [Install SQLCMD](https://learn.microsoft.com/en-us/sql/tools/sqlcmd/sqlcmd-utility?view=sql-server-ver16&tabs=go%2Clinux&pivots=cs1-bash#tabpanel_2_go)
 
 Here you have the instructions to install the prerequisites in Ubuntu 20.04 with GitHub Codespaces:
 
-## Installing (Go) SQLCMD for Ubuntu
+## Installing SQLCMD for Ubuntu
 
 ```bash
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc
